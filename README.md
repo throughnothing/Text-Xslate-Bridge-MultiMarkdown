@@ -4,7 +4,7 @@ Text::Xslate::Bridge::MultiMarkdown - MultiMarkdown 'filter' for Text::Xslate
 
 # VERSION
 
-version 0.001
+version 0.002
 
 # SYNOPSIS
 
@@ -16,7 +16,7 @@ version 0.001
     );
 
     print $xslate->render_string('<: markdown( "# H1 Heading" ) :>');
-    
+
     print $xslate->render_string('<: markdown( "# H1 Heading", heading_ids => 0 ) :>');
 
 # AUTHOR
