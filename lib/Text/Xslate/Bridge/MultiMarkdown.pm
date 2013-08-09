@@ -8,8 +8,8 @@ use Text::MultiMarkdown;
 # ABSTRACT: MultiMarkdown 'filter' for Text::Xslate
 
 sub markdown {
-    my ( $text ) = @_;
-    my $m = Text::MultiMarkdown->new;
+    my ( $text, %markdown_options ) = @_;
+    my $m = Text::MultiMarkdown->new( %markdown_options );
     return $m->markdown($text);
 }
 
@@ -26,6 +26,8 @@ __PACKAGE__->bridge( function => \%scalar_methods );
     );
 
     print $xslate->render_string('<: markdown( "# H1 Heading" ) :>');
+
+    print $xslate->render_string('<: markdown( "# H1 Heading", heading_ids => 0 ) :>');
 
 =cut
 
